@@ -1,0 +1,13 @@
+.container{
+  text-align: center;
+  background-color: rgb(204, 204, 204);
+  padding: 35px 0;
+  a{
+    color: black;
+    transition: 150ms;
+  }
+  a:hover{
+    color: white;
+    transition: 150ms;
+  }
+}

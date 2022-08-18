@@ -1,0 +1,35 @@
+.container{
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  margin: 3px 0;
+  div{
+    padding: 5px;
+  }
+  p{
+    margin: 0 0 0 10px;
+  }
+  .infoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    img{
+      width: 100px;
+      height: 100px;
+    }
+    .price{
+      font-weight: bold;
+    }
+  }
+  .quantityContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    input{
+      width: 100px;
+      border-radius: 3px;
+      border: unset;
+      margin: 0 5px;
+      padding: 5px 0 5px 5px;
+    }
+  }
+}
