@@ -1,6 +1,12 @@
 import CloseIcon from "@mui/icons-material/Close";
+import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { ShopItem } from "../../../common/types";
+import {
+  removeItem,
+  updateItemQuantity,
+} from "../../../features/SelectedItemsSlice";
 import styles from "./Item.module.scss";
 
 interface Props {
@@ -8,6 +14,19 @@ interface Props {
 }
 
 export default function Item(props: Props) {
+  const [quantity, setQuantity] = useState(props.Item.quantity);
+  const dispatch = useDispatch();
+
+  const updateQuantity = (quantity: number) => {
+    if (quantity === 0) {
+      dispatch(removeItem(props.Item));
+      return;
+    }
+    const payload = { ...props.Item, quantity };
+    dispatch(updateItemQuantity(payload));
+    setQuantity(quantity);
+  };
+
   return (
     <Row className={styles.container}>
       <Col className={styles.infoContainer}>
@@ -21,8 +40,15 @@ export default function Item(props: Props) {
       </Col>
       <Col className={styles.quantityContainer}>
         <p>Quantity:</p>
-        <input type="number" id="points" name="points" step="1"></input>
-        <CloseIcon />
+        <input
+          type="number"
+          id="points"
+          value={quantity}
+          min="0"
+          step="1"
+          onChange={(evt) => updateQuantity(parseInt(evt.target.value))}
+        ></input>
+        <CloseIcon onClick={() => dispatch(removeItem(props.Item))} />
       </Col>
     </Row>
   );

@@ -14,6 +14,18 @@ export default function ItemList(props: Props) {
           <Item Item={item} />
         </Row>
       ))}
+      <div>
+        <p>
+          Total:{" "}
+          <b>
+            {props.Items.reduce(
+              (acc, item) => acc + item.unitPrice * item.quantity,
+              0
+            )}
+          </b>
+          $
+        </p>
+      </div>
     </div>
   );
 }

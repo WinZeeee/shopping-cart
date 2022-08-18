@@ -4,4 +4,5 @@ export interface ShopItem {
   unitPrice: number;
   image: string;
   createdAt: string;
+  quantity: number;
 }
