@@ -1,4 +1,4 @@
-import Button from "react-bootstrap/Button";
+import { Button, Paper } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { ShopItem } from "../../../common/types";
 import { addItem } from "../../../features/SelectedItemsSlice";
@@ -17,12 +17,23 @@ export default function Item(props: Props) {
   };
 
   return (
-    <div className={styles.container}>
+    <Paper elevation={4} className={styles.container}>
       <img src={props.Item.image} alt="Product showcasing"></img>
       <p>{props.Item.name}</p>
-      <Button onClick={() => handleAddItem(props.Item)} variant="primary">
+      {/* <p>
+        {new Intl.DateTimeFormat("en-US", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        }).format(props.Item.createdAt * 1000)}
+      </p> */}
+      <b>{props.Item.unitPrice}$</b>
+      <Button variant="contained" onClick={() => handleAddItem(props.Item)}>
         Add to Cart
       </Button>
-    </div>
+    </Paper>
   );
 }

@@ -1,6 +1,6 @@
 import CloseIcon from "@mui/icons-material/Close";
+import { Paper } from "@mui/material";
 import { useState } from "react";
-import { Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { ShopItem } from "../../../common/types";
 import {
@@ -28,8 +28,8 @@ export default function Item(props: Props) {
   };
 
   return (
-    <Row className={styles.container}>
-      <Col className={styles.infoContainer}>
+    <Paper elevation={4} className={styles.container + " my-3"}>
+      <div className={styles.infoContainer}>
         <div>
           <img src={props.Item.image} alt={props.Item.name} />
         </div>
@@ -37,8 +37,8 @@ export default function Item(props: Props) {
           <p>{props.Item.name}</p>
           <p className={styles.price}>{props.Item.unitPrice}$</p>
         </div>
-      </Col>
-      <Col className={styles.quantityContainer}>
+      </div>
+      <div className={styles.quantityContainer}>
         <p>Quantity:</p>
         <input
           type="number"
@@ -49,7 +49,7 @@ export default function Item(props: Props) {
           onChange={(evt) => updateQuantity(parseInt(evt.target.value))}
         ></input>
         <CloseIcon onClick={() => dispatch(removeItem(props.Item))} />
-      </Col>
-    </Row>
+      </div>
+    </Paper>
   );
 }

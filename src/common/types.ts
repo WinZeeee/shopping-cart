@@ -3,6 +3,6 @@ export interface ShopItem {
   name: string;
   unitPrice: number;
   image: string;
-  createdAt: string;
+  createdAt: number;
   quantity: number;
 }

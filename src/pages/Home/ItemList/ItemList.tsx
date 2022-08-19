@@ -1,4 +1,3 @@
-import { Col, Row } from "react-bootstrap";
 import { ShopItem } from "../../../common/types";
 import Item from "../Item/Item";
 import styles from "./ItemList.module.scss";
@@ -9,16 +8,18 @@ interface Props {
 
 export default function ItemList(props: Props) {
   return (
-    <div className={styles.container}>
-      <Row>
-        {props.Items.map((item) => {
-          return (
-            <Col lg={3} md={4} sm={6} className={styles.item}>
-              <Item Item={item} />
-            </Col>
-          );
-        })}
-      </Row>
+    <div
+      className={
+        "grid grid-cols-1 gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-5"
+      }
+    >
+      {props.Items.map((item) => {
+        return (
+          <div className={styles.item}>
+            <Item key={item.id} Item={item} />
+          </div>
+        );
+      })}
     </div>
   );
 }

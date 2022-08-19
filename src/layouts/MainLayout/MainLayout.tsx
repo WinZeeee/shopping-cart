@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import Header from "../../components/Header/Header";
 
 interface Props {
@@ -7,7 +6,7 @@ interface Props {
 const MainLayout = ({ children }: Props) => (
   <div>
     <Header></Header>
-    <Container>{children}</Container>
+    <div className="container mx-auto">{children}</div>
   </div>
 );
 

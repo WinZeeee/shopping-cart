@@ -1,4 +1,3 @@
-import { Row } from "react-bootstrap";
 import { ShopItem } from "../../../common/types";
 import Item from "../Item/Item";
 
@@ -10,9 +9,9 @@ export default function ItemList(props: Props) {
   return (
     <div>
       {props.Items.map((item: ShopItem) => (
-        <Row>
-          <Item Item={item} />
-        </Row>
+        <div>
+          <Item key={item.id} Item={item} />
+        </div>
       ))}
       <div>
         <p>
@@ -22,8 +21,8 @@ export default function ItemList(props: Props) {
               (acc, item) => acc + item.unitPrice * item.quantity,
               0
             )}
+            $
           </b>
-          $
         </p>
       </div>
     </div>
