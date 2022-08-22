@@ -1,7 +1,7 @@
 import { ArrowBack } from "@mui/icons-material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ShopItem } from "../../common/types";
 import { selectSelectedItems } from "../../features/SelectedItemsSlice";
@@ -9,6 +9,7 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   const selectedItems = useSelector(selectSelectedItems);
+  const navigate = useNavigate();
   const totalNumOfItems = selectedItems.reduce(
     (acc: number, item: ShopItem) => {
       return acc + item.quantity;
@@ -30,6 +31,13 @@ export default function Header() {
       break;
   }
 
+  const handleRedirectToCart = () => {
+    console.log("redirect to cart");
+    if (totalNumOfItems > 0) {
+      navigate("/cart");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className="container mx-auto flex items-center">
@@ -47,12 +55,15 @@ export default function Header() {
               </Link>
             </button>
           )}
-          <Link to="/cart">
+          <div
+            className={styles.cartIcon}
+            onClick={() => handleRedirectToCart()}
+          >
             <ShoppingCartIcon fontSize="large" />
             {totalNumOfItems > 0 && (
               <span className={styles.cartNumber}>{totalNumOfItems}</span>
             )}
-          </Link>
+          </div>
         </div>
       </div>
     </div>
