@@ -15,7 +15,6 @@ describe("Cart", () => {
       </Provider>
     );
     expect(screen.getByText("0$")).toBeInTheDocument();
-    screen.debug();
   });
 
   test("Selected item list render properly", () => {
@@ -50,6 +49,5 @@ describe("Cart", () => {
     expect(
       screen.getByText("Điện thoại Samsung Galaxy A03 (3GB/32GB)")
     ).toBeInTheDocument();
-    screen.debug();
   });
 });

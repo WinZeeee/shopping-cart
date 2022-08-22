@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <div className="container flex justify-end my-5">
+      <div className="container flex justify-end my-5 px-5 lg:px-0">
         <FormControl>
           <Select
             value={Filter}

@@ -1,13 +1,48 @@
-.container{
+.container {
   text-align: center;
-  background-color: rgb(204, 204, 204);
-  padding: 35px 0;
-  a{
-    color: black;
-    transition: 150ms;
-  }
-  a:hover{
+  background-color: #1a94ff;
+  padding: 20px 0;
+  a {
     color: white;
     transition: 150ms;
+  }
+  a:hover {
+    color: white;
+    transition: 150ms;
+  }
+
+  button {
+    border: 1px solid white;
+    transition: 150ms;
+    width: 50px;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+
+  button:hover {
+    background-color: white;
+    transition: 150ms;
+    svg {
+      color: #1a94ff;
+      transition: 150ms;
+    }
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: White;
+  }
+
+  .cartNumber {
+    font-size: 13px;
+    font-weight: bold;
+    background: red;
+    color: #fff;
+    padding: 2px 5px;
+    vertical-align: top;
+    margin-left: -13px;
+    top: -10px;
+    border-radius: 50%;
   }
 }

@@ -7,7 +7,7 @@ export const ItemSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      // if item already exists add 1 to quantity
+      // if item already exists add 1 to quantity else add item to items array
       if (
         state.items.filter((item) => item.id === action.payload.id).length > 0
       ) {
