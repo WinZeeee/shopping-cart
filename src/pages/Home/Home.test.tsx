@@ -3,9 +3,9 @@ import axios, { AxiosResponse } from "axios";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import mockProductList from "../../dummy.json";
-import { store } from "../../store";
+import { store } from "../../redux/store";
 
-import Home from "./Home";
+import Home from "./index";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;

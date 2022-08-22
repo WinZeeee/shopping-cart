@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
-import { store } from "../../store";
-import Cart from "./Cart";
+import { store } from "../../redux/store";
+import Cart from "./index";
 import ItemList from "./ItemList/ItemList";
 
 describe("Cart", () => {

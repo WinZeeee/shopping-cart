@@ -5,7 +5,7 @@ import { ShopItem } from "../../common/types";
 import MainLayout from "../../layouts/MainLayout/MainLayout";
 import ItemList from "./ItemList/ItemList";
 
-export default function Home() {
+export function HomeContainer() {
   const [Items, setSetItems] = useState<ShopItem[]>([]);
   const [Filter, setFilter] = useState<string>("Newest");
 

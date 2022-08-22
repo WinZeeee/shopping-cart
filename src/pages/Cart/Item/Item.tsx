@@ -6,7 +6,7 @@ import { ShopItem } from "../../../common/types";
 import {
   removeItem,
   updateItemQuantity,
-} from "../../../features/SelectedItemsSlice";
+} from "../../../redux/SelectedItemsSlice";
 import styles from "./Item.module.scss";
 
 interface Props {

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ShopItem } from "../../common/types";
-import { selectSelectedItems } from "../../features/SelectedItemsSlice";
+import { selectSelectedItems } from "../../redux/SelectedItemsSlice";
 import styles from "./Header.module.scss";
 
 export default function Header() {

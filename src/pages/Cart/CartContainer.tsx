@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { selectSelectedItems } from "../../features/SelectedItemsSlice";
 import MainLayout from "../../layouts/MainLayout/MainLayout";
+import { selectSelectedItems } from "../../redux/SelectedItemsSlice";
 import ItemList from "./ItemList/ItemList";
 
-export default function Cart() {
+export function CartContainer() {
   const selectedItems = useSelector(selectSelectedItems);
 
   if (selectedItems.length === 0) {
