@@ -2,10 +2,10 @@ import { render, screen, waitFor } from "@testing-library/react";
 import axios, { AxiosResponse } from "axios";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
-import mockProductList from "../../dummy.json";
-import { store } from "../../redux/store";
+import mockProductList from "../../../dummy.json";
+import { store } from "../../../redux/store";
 
-import Home from "./index";
+import Home from "../index";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
