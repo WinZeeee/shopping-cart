@@ -32,7 +32,6 @@ export default function Header() {
   }
 
   const handleRedirectToCart = () => {
-    console.log("redirect to cart");
     if (totalNumOfItems > 0) {
       navigate("/cart");
     }
