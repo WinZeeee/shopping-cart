@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import axios, { AxiosResponse } from "axios";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
-import mockProductList from "../../../common/dummy.json";
+import mockItems from "../../../common/mockItems";
 import { store } from "../../../redux/store";
 
 import Home from "../index";
@@ -12,7 +12,7 @@ const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("Home", () => {
   test("Home component render properly", async () => {
-    const ProductList = mockProductList;
+    const ProductList = mockItems;
     mockedAxios.get.mockResolvedValue({
       data: ProductList,
       status: 200,
@@ -33,7 +33,7 @@ describe("Home", () => {
   });
 
   test("Render product list property", async () => {
-    const mockRes = { data: mockProductList } as AxiosResponse;
+    const mockRes = { data: mockItems } as AxiosResponse;
     jest.spyOn(axios, "get").mockResolvedValueOnce(mockRes);
     render(
       <Provider store={store}>

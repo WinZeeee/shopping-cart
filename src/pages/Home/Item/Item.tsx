@@ -18,7 +18,7 @@ export default function Item(props: Props) {
 
   return (
     <Paper elevation={4} className={styles.container}>
-      <img src={props.Item.image} alt="Product showcasing"></img>
+      <img src={props.Item.image} alt="Product showcasing" />
       <p>{props.Item.name}</p>
       <b>{props.Item.unitPrice}$</b>
       <Button variant="contained" onClick={() => handleAddItem(props.Item)}>
